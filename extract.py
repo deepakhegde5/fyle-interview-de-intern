@@ -20,7 +20,7 @@ def extract_amount(dirpath: str) -> float:
         file = json.loads(data)
     blocks = file['Blocks']
     substrng = {"purchase","amount paid","total","total:","theater and dance","order total","paid","payment","credit","debit"}
-    for m,n in enumerate(reversed(blocks)):
+    for m,_ in enumerate(reversed(blocks)):
         try:
             if blocks[m]['Text'].lower() in substrng:
                 a = 1
